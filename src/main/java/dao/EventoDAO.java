@@ -53,4 +53,20 @@ public class EventoDAO {
 		System.out.println("DOPO IL REFRESH: " + found);
 	}
 
+	// MODIFY
+	public void modify(long id) {
+		Evento found = em.find(Evento.class, id);
+
+		//		if (found != null) {
+		//			
+		//		}
+
+		found.setDescrizione("Cambio di descrizione");
+
+		EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+		em.persist(found);
+		transaction.commit();
+	}
+
 }

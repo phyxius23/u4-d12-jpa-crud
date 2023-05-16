@@ -38,6 +38,8 @@ public class Application {
 
 		ed.refresh(6);
 
+		ed.modify(8);
+
 		em.close();
 		emf.close();
 
